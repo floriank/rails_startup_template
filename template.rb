@@ -1,15 +1,20 @@
 # Gems
 # ==================================================
 
-# Segment.io as an analytics solution (https://github.com/segmentio/analytics-ruby)
-gem "analytics-ruby"
 # For encrypted password
 gem "bcrypt-ruby"
+
 # Useful SASS mixins (http://bourbon.io/)
 gem "bourbon"
 
 # For authorization (https://github.com/ryanb/cancan)
 gem "cancan"
+
+# devise for handling user related stuff
+gem "devise"
+
+# use mysql by default
+gem "mysql2"
 
 case ask("Choose Template Engine:", :limited_to => %w[erb haml slim])
 when "haml"
@@ -21,16 +26,17 @@ when "slim"
 when "erb"
 end
 
-# Simple form builder (https://github.com/plataformatec/simple_form)
-gem "simple_form", git: "https://github.com/plataformatec/simple_form"
-# To generate UUIDs, useful for various things
-gem "uuidtools"
-
 gem_group :development do
   # Rspec for tests (https://github.com/rspec/rspec-rails)
   gem "rspec-rails"
-  # Guard for automatically launching your specs when files are modified. (https://github.com/guard/guard-rspec)
-  gem "guard-rspec"
+  
+  gem "pry-rails"
+  
+  # for code style
+  gem "rubocop"
+  
+  # i don't like to use webrick
+  gem "thin"
 end
 
 gem_group :test do
@@ -44,35 +50,20 @@ gem_group :test do
   gem "database_cleaner"
 end
 
-gem_group :production do
-  # For Rails 4 deployment on Heroku
-  gem "rails_12factor"
-end
 
 
-# Setting up foreman to deal with environment variables and services
-# https://github.com/ddollar/foreman
+# Initialize rspec
 # ==================================================
-# Use Procfile for foreman
-run "echo 'web: bundle exec rails server -p $PORT' >> Procfile"
-run "echo PORT=3000 >> .env"
-run "echo '.env' >> .gitignore"
-# We need this with foreman to see log output immediately
-run "echo 'STDOUT.sync = true' >> config/environments/development.rb"
-
-
-
-# Initialize guard
-# ==================================================
-run "bundle exec guard init rspec"
-
+run "bundle exec rspec --init"
 
 
 # Initialize CanCan
 # ==================================================
 run "rails g cancan:ability"
 
-
+# Initialize devise
+# ==================================================
+run "rails g devise:install"
 
 # Clean up Assets
 # ==================================================
@@ -131,7 +122,8 @@ doc/
 .idea
 .secret
 .DS_Store
-EOF"
+EOF
+*.sublime-*"
 
 
 # Git: Initialize
