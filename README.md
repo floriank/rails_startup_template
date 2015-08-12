@@ -4,6 +4,8 @@ This is a template I use for my new Ruby on Rails 4 applications. **Pull request
 
 Also check out [Startup Readings](https://github.com/dennybritz/startupreadings).
 
+__Note__: This is my personal variation of the template. Highly opinionated.
+
 ## How to Use
 
 ```bash
