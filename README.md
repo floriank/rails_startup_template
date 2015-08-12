@@ -7,7 +7,7 @@ __Note__: This is my personal variation of the template. Highly opinionated.
 ## How to Use
 
 ```bash
-rails new [app_name] -m https://github.com/floriank/rails_startup_template/blob/master/template.rb
+rails new [app_name] -m https://raw.githubusercontent.com/floriank/rails_startup_template/master/template.rb
 ```
 
 ## What it does
