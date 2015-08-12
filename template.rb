@@ -50,7 +50,7 @@ gem_group :test do
   gem "database_cleaner"
 end
 
-
+run "bundle"
 
 # Initialize rspec
 # ==================================================
