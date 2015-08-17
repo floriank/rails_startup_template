@@ -7,14 +7,11 @@ gem "bcrypt-ruby"
 # Useful SASS mixins (http://bourbon.io/)
 gem "bourbon"
 
-# For authorization (https://github.com/ryanb/cancan)
-gem "cancan"
-
 # devise for handling user related stuff
 gem "devise"
 
-# use mysql by default
-gem "mysql2"
+# for all intents and purposes, sqlite should suffice
+gem 'sqlite3'
 
 case ask("Choose Template Engine:", :limited_to => %w[erb haml slim])
 when "haml"
@@ -56,11 +53,6 @@ run "bundle"
 # ==================================================
 run "bundle exec rspec --init"
 
-
-# Initialize CanCan
-# ==================================================
-run "rails g cancan:ability"
-
 # Initialize devise
 # ==================================================
 run "rails g devise:install"
@@ -76,8 +68,6 @@ run "sed -i '' /require_tree/d app/assets/stylesheets/application.css.scss"
 # Add bourbon to stylesheet file
 run "echo >> app/assets/stylesheets/application.css.scss"
 run "echo '@import \"bourbon\";' >>  app/assets/stylesheets/application.css.scss"
-
-
 
 
 # Bootstrap: install from https://github.com/twbs/bootstrap
