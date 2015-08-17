@@ -9,6 +9,11 @@ __Note__: This is my personal variation of the template. Highly opinionated.
 ```bash
 rails new [app_name] -m https://raw.githubusercontent.com/floriank/rails_startup_template/master/template.rb
 ```
+## TODO
+
+- [ ] use the latest bootstrap
+- [ ] use the Sass version of bootstrap (or maybe switch to LESS?)
+- [ ] leave SQLite3 as a default - I do not use MySQl that often
 
 ## What it does
 
@@ -21,8 +26,6 @@ rails new [app_name] -m https://raw.githubusercontent.com/floriank/rails_startup
   - [guard-rspec](https://github.com/guard/guard-rspec): Guard for automatically launching your specs when files are modified.
   - (test environment) [capybara](https://github.com/jnicklas/capybara): I use Capybara to write integration tests and simulate user behavior.
   - (test environment) [factory_girl_rails](https://github.com/thoughtbot/factory_girl): FactoryGirl provdes a flexible alternative to Rails fixtures. 
-  - (production environment) [rails_12factor](https://devcenter.heroku.com/articles/rails-integration-gems): This is needed for deploying Rails 4 applications on [Heroku](http://heroku.com). 
-
 
 2. Cleans up assets by renaming `application.css` to `application.css.scss` and removing the `include_tree` directives. It's better design to import and require things manually. For example, `@import 'bootstrap';`
 
