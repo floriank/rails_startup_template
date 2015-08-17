@@ -21,10 +21,8 @@ rails new [app_name] -m https://raw.githubusercontent.com/floriank/rails_startup
 1. Adds the following gems:
   - bcrypt-ruby: I usually implement authentication myself instead of using gems like Devise. This is needed for the `has_secure_password` functionality. [See API Doc](http://api.rubyonrails.org/classes/ActiveModel/SecurePassword/ClassMethods.html).
   - [bourbon](http://bourbon.io/): Bourbon provides useful SASS mixins for cross-browser compatibility.
-  - [CanCan](https://github.com/ryanb/cancan): CanCan is an authorization library for Ruby on Rails which restricts what resources a given user is allowed to access.
   - (Optional) [haml-rails](http://haml.info): HAML is a beautiful templating language. I prefer it over ERB. 
   - [rspec-rails](https://github.com/rspec/rspec-rails): Rspec is a testing tool for test-driven and behavior-driven development. It makes writing specs more enjoyable.
-  - [guard-rspec](https://github.com/guard/guard-rspec): Guard for automatically launching your specs when files are modified.
   - (test environment) [capybara](https://github.com/jnicklas/capybara): I use Capybara to write integration tests and simulate user behavior.
   - (test environment) [factory_girl_rails](https://github.com/thoughtbot/factory_girl): FactoryGirl provdes a flexible alternative to Rails fixtures. 
 
