@@ -14,6 +14,7 @@ rails new [app_name] -m https://raw.githubusercontent.com/floriank/rails_startup
 - [ ] use the latest bootstrap
 - [ ] use the Sass version of bootstrap (or maybe switch to LESS?)
 - [ ] leave SQLite3 as a default - I do not use MySQl that often
+  - let the user choose the DB? 
 
 ## What it does
 
