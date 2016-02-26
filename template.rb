@@ -51,8 +51,7 @@ run "bundle"
 
 # Initialize rspec
 # ==================================================
-run "bundle exec rspec --init"
-
+run 'rails generate rspec:install'
 # Initialize devise
 # ==================================================
 run "rails g devise:install"
